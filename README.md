@@ -37,3 +37,4 @@ MFC (MLIR-based FIRRTL compiler) by modifying the `useMFC` variable in `playgrou
 The latter one requires `firtool`, which is included under `utils/`.
 
 The firtool version is updated to 1.57.0.
+The Chisel version is updated to 1.57.0.

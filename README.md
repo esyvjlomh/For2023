@@ -25,6 +25,16 @@ To run all tests in this design (recommended for test-driven development):
 make test
 ```
 
+To compile with mill:
+```bash
+make compile
+```
+
+To generate IntelliJ IDEA project:
+```bash
+make idea
+```
+
 To generate Verilog:
 ```bash
 make verilog
@@ -37,4 +47,4 @@ MFC (MLIR-based FIRRTL compiler) by modifying the `useMFC` variable in `playgrou
 The latter one requires `firtool`, which is included under `utils/`.
 
 The firtool version is updated to 1.57.0.
-The Chisel version is updated to 1.57.0.
+The Chisel version is updated to 3.6.0.

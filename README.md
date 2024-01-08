@@ -9,10 +9,10 @@ Contents at a glance:
 * `.gitignore` - helps Git ignore junk like generated files, build products, and temporary files.
 * `build.sc` - instructs mill to build the Chisel project
 * `Makefile` - rules to call mill
-* `playground/src/GCD.scala` - GCD source file
-* `playground/src/DecoupledGCD.scala` - another GCD source file
-* `playground/src/Elaborate.scala` - wrapper file to call chisel command with the GCD module
-* `playground/test/src/GCDSpec.scala` - GCD tester
+* `playground/src/main/Elaborate.scala` - Wrapper file to call chisel command with the stepPlusPE module
+* `playground/src/main/stepPlusPE.scala` - Top Module source file
+* `playground/src/main/PE_Parameterized.scala` - Parameterized PE core source file
+* `playground/src/main/pipeline.scala` - Parameterized pipeline module source file
 
 Feel free to rename or delete files under `playground/` or use them as a reference/template.
 

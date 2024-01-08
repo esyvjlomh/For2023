@@ -46,5 +46,5 @@ You can change the FIRRTL compiler between SFC (Scala-based FIRRTL compiler) and
 MFC (MLIR-based FIRRTL compiler) by modifying the `useMFC` variable in `playground/src/Elaborate.scala`.
 The latter one requires `firtool`, which is included under `utils/`.
 
-The firtool version is updated to 1.57.0.
-The Chisel version is updated to 3.6.0.
+The firtool version of project is updated to 1.57.0.
+The Chisel version of project is updated to 3.6.0.

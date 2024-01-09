@@ -1,5 +1,4 @@
-package main.scala
-
+import main.scala._
 import _root_.circt.stage._
 
 //object Elaborate extends App {

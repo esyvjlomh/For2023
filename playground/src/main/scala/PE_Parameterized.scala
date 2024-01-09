@@ -3,14 +3,14 @@
  * PE kernel size is paramitized.
  * n: Defines the kernel size. For example, if n==4, the kernel_size==4x4.
  */
-package CNN
+package main.scala
 
 import chisel3._
 //import chisel3.experimental._(Prepared for Fixedpoint)
 
 class PE_Parameterized(n:Int) extends Module {
-  val s = n * n
-  val odd = (s%2).U === 0.U
+  protected val s = n * n
+  protected val odd = (s%2).U === 0.U
   //Some auxiliary parameters (scala type).
 
   def odd_top(k:Int)=
@@ -25,10 +25,10 @@ class PE_Parameterized(n:Int) extends Module {
   })
   //IO definition. Now the dataIn&&weightIn should be UInt because it is combined.
 
-  val dataInVec = WireInit(VecInit(Seq.fill(s)(0.S(8.W))))
-  val weightInVec = WireInit(VecInit(Seq.fill(s)(0.S(8.W))))
-  val product0x = WireInit(VecInit(Seq.fill(s)(0.S(16.W))))
-  val productReg = RegInit(VecInit(Seq.fill(s)(0.S(16.W))))
+  protected val dataInVec = WireInit(VecInit(Seq.fill(s)(0.S(8.W))))
+  protected val weightInVec = WireInit(VecInit(Seq.fill(s)(0.S(8.W))))
+//  protected val product0x = WireInit(VecInit(Seq.fill(s)(0.S(16.W))))
+  protected val productReg = RegInit(VecInit(Seq.fill(s)(0.S(16.W))))
   //Use these Vecs to combine datas.The Vecs you want to use must be initialized.
 
   for (i <- 0 until s) {
@@ -42,14 +42,14 @@ class PE_Parameterized(n:Int) extends Module {
   }
   //Multiply function.Give the wire value to a bundle of regs.
 
-  val addIn0Vec = WireInit(VecInit(Seq.fill(s)(0.S(17.W))))
+  protected val addIn0Vec = WireInit(VecInit(Seq.fill(s)(0.S(17.W))))
   for (i <- 0 until s) {
     addIn0Vec(i) := productReg(i)
   }
   //Use the regs to add!
 
   //Use 6-level-max hierarchy to speed up the adding process.
-  val pipeline1 = Module(new pipeline(s,1))
+  protected val pipeline1 = Module(new pipeline(s,1))
   for (i <- 0 until s) {
     pipeline1.io.dataIn(i) := addIn0Vec(i)
   }

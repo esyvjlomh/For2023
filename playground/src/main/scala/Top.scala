@@ -1,7 +1,6 @@
 package main.scala
 
 import chisel3._
-import chisel3.util._
 
 class TopIO extends Bundle{
   val aclk = Input(Bool())

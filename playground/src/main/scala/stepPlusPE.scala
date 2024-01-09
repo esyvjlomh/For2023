@@ -1,4 +1,4 @@
-package CNN
+package main.scala
 
 import chisel3._
 import chisel3.util.log2Up
@@ -6,8 +6,8 @@ import chisel3.util.log2Up
 class stepPlusPE(step: Int,ifmsize: Int,n: Int) extends Module {
   val s = n * n
   val ifm = ifmsize * ifmsize
-  val u = ifmsize
-  val data_count = s / 4 + 1
+//  val u = ifmsize
+//  val data_count = s / 4 + 1
   val odd = (s%2).U === 0.U
 
   val io = IO(new Bundle {

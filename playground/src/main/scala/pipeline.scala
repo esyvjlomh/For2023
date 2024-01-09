@@ -3,7 +3,8 @@
  * n: The number of inputs in this pipeline.
  * level: Which level does this pipeline stands.(Different level needs different expanding of the signal bit)
  */
-package CNN
+package main.scala
+
 import chisel3._
 
 class pipeline(n:Int,level:Int) extends Module {

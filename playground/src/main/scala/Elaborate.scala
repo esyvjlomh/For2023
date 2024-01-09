@@ -1,6 +1,6 @@
-import CNN.stepPlusPE
+package main.scala
+
 import _root_.circt.stage._
-import main.scala.Top
 
 //object Elaborate extends App {
 //  def top = new stepPlusPE(3,8,3)

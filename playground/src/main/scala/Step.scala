@@ -1,4 +1,4 @@
-package CNN
+package main.scala
 
 import chisel3._
 import chisel3.util.{Cat, log2Up}
@@ -6,8 +6,8 @@ import chisel3.util.{Cat, log2Up}
 class Step(step:Int,ifmsize:Int,n:Int) extends Module {
   val s = n * n
   val ifm = ifmsize * ifmsize
-  val u = ifmsize
-  val data_count = s / 4 + 1
+//  val u = ifmsize
+//  val data_count = s / 4 + 1
   val conv_count = ((ifm - (n-1) * (ifmsize+1)) / step) + 2
 
   val io = IO(new Bundle {
